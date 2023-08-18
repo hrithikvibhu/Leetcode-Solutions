@@ -10,7 +10,7 @@ class Solution {
         while(r<n){
             count2[s2.charAt(r)-'a']++;
             if(r-l+1 == s1.length()){
-                if(check(count1,count2))
+                if(Arrays.equals(count1,count2)) 
                     return true;
                 count2[s2.charAt(l)-'a']--;
                 l++;
@@ -20,11 +20,4 @@ class Solution {
         return false;
     }
     
-    public boolean check(int[] a , int[] b){
-        for(int i=0;i<a.length;i++){
-            if(a[i]!=b[i])
-                return false;
-        }
-        return true;
-    }
 }
