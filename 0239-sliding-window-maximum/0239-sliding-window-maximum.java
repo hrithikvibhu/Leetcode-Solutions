@@ -8,7 +8,7 @@ class Solution {
         int i=0;
         
         while(r<n){
-            if(!q.isEmpty() && q.peek()<l)
+            while(!q.isEmpty() && q.peek()<l)
                 q.pollFirst();
             
             while(!q.isEmpty() && nums[q.peekLast()]<nums[r])
