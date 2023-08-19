@@ -16,7 +16,7 @@ class Solution {
             
             q.offer(r);
             
-            if(r-l+1>=k){
+            if(r-l+1 ==k){
                 res[i++] = nums[q.peek()];
                 l++;
             }
