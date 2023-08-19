@@ -6,22 +6,22 @@ class Solution {
         int[] map = new int[128];
         String res = "";
         for(char c : t.toCharArray())
-            map[c]++;
+            map[c-'A']++;
         
         int min = Integer.MAX_VALUE;
         int start=0;
         
         while(r<n){
-            if(map[s.charAt(r)]>0)
+            if(map[s.charAt(r)-'A']>0)
                 count--;
-            map[s.charAt(r)]--;
+            map[s.charAt(r)-'A']--;
             while(count==0){
                 if(r-l<min){
                     min = r-l;
                     start = l;
                 }
-                map[s.charAt(l)]++;
-                if(map[s.charAt(l)]>0)
+                map[s.charAt(l)-'A']++;
+                if(map[s.charAt(l)-'A']>0)
                     count++;
                 l++;
             }
