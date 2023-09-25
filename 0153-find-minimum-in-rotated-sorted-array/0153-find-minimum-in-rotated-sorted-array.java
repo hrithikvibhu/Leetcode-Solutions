@@ -3,7 +3,6 @@ class Solution {
         int n = nums.length;
         int l = 0 , r = n-1;
         while(l<r){
-            if(nums[l]<nums[r]) return nums[l];
             int m = l + (r-l)/2;
             if(nums[m]>nums[r])
                 l = m+1;
