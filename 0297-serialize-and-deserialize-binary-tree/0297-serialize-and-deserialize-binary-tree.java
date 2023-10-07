@@ -13,7 +13,7 @@ public class Codec {
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
         helper1(root,sb);
-                System.out.println(sb.toString());
+                // System.out.println(sb.toString());
 
         return sb.toString();
     }
@@ -38,7 +38,7 @@ public class Codec {
     
     public TreeNode helper2(Queue<String> q){
         String val = q.remove();
-        System.out.println(val);
+        // System.out.println(val);
         if(val.equals("X"))
             return null;
         else{
