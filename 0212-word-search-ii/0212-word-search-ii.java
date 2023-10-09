@@ -6,9 +6,9 @@ class Solution {
     
     Node root;
     int n,m;
-    List<String> res;
+    Set<String> res;
     public List<String> findWords(char[][] board, String[] words) {
-        res = new ArrayList<>();
+        res = new HashSet<>();
         root = new Node();
         for(String str : words){
             insert(str);
@@ -19,7 +19,7 @@ class Solution {
             for(int j=0;j<m;j++)
                 dfs(i,j,root,board);
         
-        return res;
+        return new ArrayList<>(res);
     }
     
     public void insert(String word){
@@ -44,7 +44,7 @@ class Solution {
         curr = next;
         if(curr.word!=null){
             res.add(curr.word);
-            curr.word = null;
+            
         }
         
         board[i][j] = '.';
