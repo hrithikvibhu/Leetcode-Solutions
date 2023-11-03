@@ -14,6 +14,7 @@ class Solution {
                    matrix[i][j] += Math.min(matrix[i-1][j+1] ,  Math.min(matrix[i-1][j] , matrix[i-1][j-1])); 
                 }
             }
+            
         }
         for(int i=0;i<n;i++)
             res = Math.min(res, matrix[n-1][i]);
