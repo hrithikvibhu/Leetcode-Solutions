@@ -7,7 +7,7 @@ class Solution {
         }
         if( sum %2 !=0) return false;
         
-        return helper(0,nums,sum/2);
+        return helper2(nums,sum/2);
     }
     
     private boolean helper(int i,int[] nums , int sum){
@@ -20,4 +20,17 @@ class Solution {
         map.put(key,res);
         return res;
     }
+    
+    private boolean helper2(int[] nums , int sum){
+        boolean[] dp = new boolean[sum+1];
+        dp[0] = true;
+        for(int num : nums){
+            for(int i=sum;i>0;i--){
+                if(i>=num)
+                    dp[i] = dp[i] || dp[i-num];
+            }
+        }
+        return dp[sum];
+    }
+    
 }
