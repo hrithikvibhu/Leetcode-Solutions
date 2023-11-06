@@ -3,7 +3,6 @@ class Solution {
     Integer dp[][];
     public int change(int amount, int[] coins) {
         dp = new Integer[amount+1][coins.length+1];
-        Arrays.sort(coins);
         return helper(0,amount,coins);
     }
     
