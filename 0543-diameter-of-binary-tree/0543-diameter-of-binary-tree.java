@@ -21,10 +21,10 @@ class Solution {
     }
     
     private int helper(TreeNode root){
-        if(root == null) return -1;
-        int l = 1+helper(root.left);
-        int r = 1+helper(root.right);
+        if(root == null) return 0;
+        int l = helper(root.left);
+        int r = helper(root.right);
         res = Math.max(res , l+r);
-        return Math.max(l,r);
+        return 1+Math.max(l,r);
     }
 }
