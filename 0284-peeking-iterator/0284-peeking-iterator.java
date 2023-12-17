@@ -8,8 +8,7 @@ class PeekingIterator implements Iterator<Integer> {
     public PeekingIterator(Iterator<Integer> iterator) {
 	    // initialize any member here.
 	    itr = iterator;
-        if(hasNext())
-            next = itr.next();
+        next = itr.next();
 	}
 	
     // Returns the next element in the iteration without advancing the iterator.
@@ -31,6 +30,6 @@ class PeekingIterator implements Iterator<Integer> {
 	
 	@Override
 	public boolean hasNext() {
-	    return itr.hasNext() || next!=null;
+	    return next!=null;
 	}
 }
