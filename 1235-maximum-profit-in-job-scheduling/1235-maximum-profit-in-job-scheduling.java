@@ -32,12 +32,21 @@ class Solution {
         return res;
     }
     
-     int findNext(int cur, int[][] jobs) {
-        for (int next = cur + 1; next < jobs.length; next++) {
-            if (jobs[next][0] >= jobs[cur][1]) {
-                return next;   
+     int findNext(int idx, int[][] jobs) {
+        int lo = idx + 1;
+        int hi = jobs.length -1;
+        while(lo <= hi) {
+            int mid = lo + (hi - lo)/2;
+            if(jobs[mid][0] >= jobs[idx][1]) {
+                if(jobs[mid-1][0] >= jobs[idx][1])
+                    hi = mid - 1;
+                else 
+                    return mid;
+            } else {
+                lo = mid + 1;
             }
         }
+        
         return -1;
     }
 }
