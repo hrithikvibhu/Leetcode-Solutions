@@ -8,7 +8,6 @@ class Solution {
             
             if(i>0)
                 map[i] += map[i-1];
-            System.out.print(map[i]);
         }
         int mid = (n-1)/2;
         if(map[mid]==map[n-1]-map[mid])
