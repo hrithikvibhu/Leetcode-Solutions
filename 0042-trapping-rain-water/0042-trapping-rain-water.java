@@ -7,7 +7,7 @@ class Solution {
         int maxR = height[n-1];
         while(l<r){
             int area = 0;
-            if(maxL<maxR){
+            if(maxL<=maxR){
                 l++;
                  area = maxL-height[l];
                 maxL = Math.max(maxL,height[l]);
